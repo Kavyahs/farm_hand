@@ -37,55 +37,41 @@
      <div class="col-sm-2"></div>
      <div class="col-sm-5">
        <div class="bid-details">Bidding Details</div>
-       <!-- <form class="form-horizontal"> -->
         <%= form_for @bidding, :html => {:class => "form-horizontal" } do |f| %>
         <div class="form-group">
           <label for="subCtaegory" class="col-sm-4 control-label">Name</label>
           <div class="col-sm-8">
-            <!-- <input type="text" class="form-control" id="Name" placeholder="Name"> -->
             <%= f.text_field :bidder_name, :class => "form-control", :id => "Name", :placeholder => "Name" %>
           </div>
         </div>
         <div class="form-group">
           <label for="E-mail" class="col-sm-4 control-label">E-mail</label>
           <div class="col-sm-8">
-            <!-- <input type="email" class="form-control" id="E-mail" placeholder="E-mail Address"> -->
             <%= f.text_field :email, :class => "form-control", :id => "E-mail", :placeholder => "Email" %>
           </div>
         </div>
         <div class="form-group">
           <label for="phoneNumber" class="col-sm-4 control-label">Phone Number</label>
           <div class="col-sm-8">
-            <!-- <input type="email" class="form-control" id="phoneNumber" placeholder="Phone Number"> -->
             <%= f.text_field :phone, :class => "form-control", :id => "phoneNumber", :placeholder => "Phone" %>
           </div>
         </div>
         <div class="form-group">
           <label for="Price" class="col-sm-4 control-label">Price</label>
           <div class="col-sm-5">
-            <!-- <input type="text" class="form-control" id="Price" placeholder="Price"> -->
             <%= f.text_field :price, :class => "form-control", :id => "Price", :placeholder => "Price" %>
           </div>
           <div class="col-sm-3">
-           <select class="form-control">
-             <option>Kilogram</option>
-             <option>Quintal</option>
-             <option>Tonne</option>
-           </select>
+           <%= f.select :quantity_type, options_for_select(ConfigCenter::Measurement::Type), {}, { id: 'districts_select', :class => "form-control" } %> 
          </div>
        </div>
        <div class="form-group">
         <label for="Quantity" class="col-sm-4 control-label">Quantity</label>
         <div class="col-sm-5">
-          <!-- <input type="text" class="form-control" id="Quantity" placeholder="Quantity"> -->
           <%= f.text_field :quantity, :class => "form-control", :id => "Quantity", :placeholder => "Quantity" %>
         </div>
         <div class="col-sm-3">
-         <select class="form-control">
-           <option>Kilogram</option>
-           <option>Quintal</option>
-           <option>Tonne</option>
-         </select>
+         <%= f.select :quantity_type, options_for_select(ConfigCenter::Measurement::Type), {}, { id: 'districts_select', :class => "form-control" } %> 
        </div>
      </div>
      <div class="form-group">
@@ -96,24 +82,14 @@
       </div>
       <div class="form-group">
       <label for="Address" class="col-sm-4 control-label">District</label>
-      <div class="col-sm-5">
-         <!-- <select class="form-control">
-           <option>Kilogram</option>
-           <option>Quintal</option>
-           <option>Tonne</option>
-         </select> -->
+      <div class="col-sm-8">
          <%= f.select :district_id, options_for_select(@districts.collect { |district|
           [district.name.titleize, district.id] }, 0), {}, { id: 'districts_select', :class => "form-control" } %>       
       </div>
        </div>
        <div class="form-group">
        <label for="Address" class="col-sm-4 control-label">State</label>
-       <div class="col-sm-5">
-         <!-- <select class="form-control">
-           <option>Kilogram</option>
-           <option>Quintal</option>
-           <option>Tonne</option>
-         </select> -->
+       <div class="col-sm-8">
          <%= f.select :state_id, options_for_select(@states.collect { |state|
           [state.name.titleize, state.id] }, 0), {}, { id: 'states_select', :class => "form-control" } %>
        </div>
