@@ -1,5 +1,5 @@
 var messageModalId = "div_modal_message";
-var genericModalId = "div_modal_generic";
+var genericModalId = "Modal";
 
 // $('#'+messageModalId).modal({
 //   keyboard: true,
