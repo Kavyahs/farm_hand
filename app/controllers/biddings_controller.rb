@@ -1,4 +1,4 @@
-class BiddingsController < ActionController::Base
+class BiddingsController < ApplicationController
 
 
   def new
