@@ -6,7 +6,7 @@ describe Product do
   it { should belong_to(:sub_category) }
   it { should belong_to(:user) }
   it { should belong_to(:district) }
-  # it { should have_many(:biddings) }
+  it { should have_many(:biddings) }
 
   context 'positive case' do
     it 'create product with all valid params' do

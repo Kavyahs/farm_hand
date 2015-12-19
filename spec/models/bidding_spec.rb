@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Product do
   let(:bidding){FactoryGirl.create(:bidding)}
 
-  # it { should belong_to(:product) }
+  it { should belong_to(:product) }
   it { should belong_to(:user) }
   it { should belong_to(:district) }
 
