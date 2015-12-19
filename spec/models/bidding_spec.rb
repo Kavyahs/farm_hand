@@ -3,6 +3,10 @@ require 'rails_helper'
 describe Product do
   let(:bidding){FactoryGirl.create(:bidding)}
 
+  # it { should belong_to(:product) }
+  it { should belong_to(:user) }
+  it { should belong_to(:district) }
+
   context 'positive case' do
     it 'validate bidding with all valid params' do
       expect(bidding).to be_valid
@@ -39,6 +43,6 @@ describe Product do
       bidding.phone = nil
       expect(bidding).to be_invalid
     end
-    
+
   end
 end

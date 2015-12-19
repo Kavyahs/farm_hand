@@ -192,7 +192,7 @@ DEPENDENCIES
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
-  shoulda-matchers (~> 2.6.1.rc1)
+  shoulda-matchers
   spring
   therubyracer
   turbolinks

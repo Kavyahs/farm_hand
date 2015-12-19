@@ -3,6 +3,11 @@ require 'rails_helper'
 describe Product do
   let!(:product) {FactoryGirl.create(:product)}
 
+  it { should belong_to(:sub_category) }
+  it { should belong_to(:user) }
+  it { should belong_to(:district) }
+  # it { should have_many(:biddings) }
+
   context 'positive case' do
     it 'create product with all valid params' do
       product

@@ -11,4 +11,10 @@ class Product < ActiveRecord::Base
   validates :close_date, presence: true
   validates :seller_name, presence: true
   validates :email, presence: true
+
+  # Assosciation
+  belongs_to :sub_category
+  belongs_to :user
+  belongs_to :district
+  has_many :biddings
 end

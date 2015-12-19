@@ -3,6 +3,9 @@ require 'rails_helper'
 describe User do
   let!(:user) {FactoryGirl.create(:user)}
 
+  it { should have_many(:products)}
+  it { should have_many(:biddings)}
+
   context 'positive case' do
     it 'create user with all valid params' do
       user

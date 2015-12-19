@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
   validates :phone, presence: true
 
+  # Assosiation
+  has_many :products
+  has_many :biddings
+
 	def send_password_reset
 		generate_token(:password_reset_token)
 		self.password_reset_sent_at = Time.zone.now
