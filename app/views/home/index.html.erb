@@ -1,105 +1,15 @@
 <div class="container content-area-height">
   <div class="home-heading text-center"><span>FARM</span> - HAND</div>
   <div class="row">
+    <% @categories.each do |category|%>
     <div class="col-sm-3">
       <div class="thumbnail">
-        <img class="image-height" src="/assets/cereals.png" alt="image">
-        <div class="caption home-category">
-         <h3 class="category-name">Cereals(ಧಾನ್ಯಗಳು)</h3>
+       <img class="image-height" src="/assets/<%= category.image_name %>" alt="image">
+       <div class="caption home-category">
+         <h3><%= link_to category.name, product_all_path(category.id) %></h3>
        </div>
      </div>
    </div>
-   <div class="col-sm-3">
-     <div class="thumbnail">
-      <img class="image-height" src="/assets/veg.jpeg" alt="image">
-      <div class="caption home-category">
-        <h3 class="category-name">Vegetables(ತರಕಾರಿಗಳು)</h3>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-3">
-   <div class="thumbnail">
-    <img class="image-height" src="/assets/flowers.png" alt="image">
-    <div class="caption home-category">
-      <h3 class="category-name">Flowers(ಹೂಗಳು)</h3>
-    </div>
-  </div>
-</div>
-<div class="col-sm-3">
- <div class="thumbnail">
-  <img class="image-height" src="/assets/fibre-crops.png" alt="image">
-  <div class="caption home-category">
-    <h3 class="category-name">Fibre Crops(ಫೈಬರ್ ಬೆಳೆಗಳು)</h3>
-  </div>
-</div>
-</div>
-</div>
-<div class="row">
-  <div class="col-sm-3">
-    <div class="thumbnail">
-      <img class="image-height" src="/assets/fruits.png" alt="image">
-      <div class="caption home-category">
-        <h3 class="category-name">Fruits(ಹಣ್ಣುಗಳು)</h3>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-3">
-    <div class="thumbnail">
-     <img class="image-height" src="/assets/poultry-fisheries.png" alt="image">
-     <div class="caption home-category">
-       <h3 class="category-name">Poultry, Fisheries (ಪೌಲ್ಟ್ರಿ , ಮೀನುಗಾರಿಕೆ)</h3>
-     </div>
-   </div>
+   <% end%>
  </div>
- <div class="col-sm-3">
-  <div class="thumbnail">
-    <img class="image-height" src="/assets/oilseeds.png" alt="image">
-    <div class="caption home-category">
-      <h3 class="category-name">Oil Seeds(ಎಣ್ಣೆ ಬೀಜ)</h3>
-    </div>
-  </div>
-</div>
-<div class="col-sm-3">
-  <div class="thumbnail">
-    <img class="image-height" src="/assets/pulses.png" alt="image">
-    <div class="caption home-category">
-      <h3 class="category-name">Pulses(ಕಾಳುಗಳು)</h3>
-    </div>
-  </div>
-</div>
-</div>
-<div class="row">
-  <div class="col-sm-3">
-   <div class="thumbnail">
-     <img class="image-height" src="/assets/spices.png" alt="image">
-     <div class="caption home-category">
-      <h3 class="category-name">Spices(ಮಸಾಲೆಗಳು)</h3>
-    </div>
-  </div>
-</div>
-<div class="col-sm-3">
- <div class="thumbnail">
-  <img class="image-height" src="/assets/dry-fruits.png" alt="image">
-  <div class="caption home-category">
-    <h3 class="category-name">Dry Fruits(ಒಣ ಹಣ್ಣುಗಳು)</h3>
-  </div>
-</div>
-</div>
-<div class="col-sm-3">
- <div class="thumbnail">
-  <img class="image-height" src="/assets/horticulture.png" alt="image">
-  <div class="caption home-category">
-    <h3 class="category-name">Horticulture(ತೋಟಗಾರಿಕೆ)</h3>
-  </div>
-</div>
-</div>
-<div class="col-sm-3">
- <div class="thumbnail">
-   <img class="image-height" src="/assets/other.png" alt="image">
-   <div class="caption home-category">
-    <h3 class="category-name">Others(ಇತರೆ)</h3>
-  </div>
-</div>
-</div>
-</div>
 </div>
