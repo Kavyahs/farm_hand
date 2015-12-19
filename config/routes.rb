@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   post 'products' => 'products#create', as: :products
 
   get 'bidding/:product_id/new' => 'biddings#new', as: :new_bidding
-  # get 'bidding/:product_id/new' => 'biddings#new', as: :new_bidding
   post 'bidding/create' => 'biddings#create', as: :biddings
 
-
+  get 'my_activity' => 'my_activities#index', as: :my_activity
+  get 'check_biddings' => 'my_activities#check_biddings', as: :check_biddings
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
