@@ -16,6 +16,13 @@ ActiveRecord::Schema.define(version: 20151219102320) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "districts", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "state_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "products", force: :cascade do |t|
     t.string   "images"
     t.string   "phone"
@@ -35,6 +42,25 @@ ActiveRecord::Schema.define(version: 20151219102320) do
     t.text     "other_details"
     t.integer  "category_id"
     t.integer  "sub_category_id"
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "password_confirmation"
+    t.string   "phone"
+    t.string   "string"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
 end
