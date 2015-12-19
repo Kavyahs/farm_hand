@@ -32,6 +32,13 @@ ActiveRecord::Schema.define(version: 20151219095949) do
     t.string   "price_type"
   end
 
+  create_table "districts", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "state_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "products", force: :cascade do |t|
     t.string   "images"
     t.string   "category"
@@ -47,6 +54,25 @@ ActiveRecord::Schema.define(version: 20151219095949) do
     t.datetime "updated_at",   null: false
     t.string   "seller_name"
     t.string   "email"
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "password_confirmation"
+    t.string   "phone"
+    t.string   "string"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
 end
