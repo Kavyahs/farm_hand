@@ -6,7 +6,8 @@
   <% @selling_products.each do |selling_product| %>
    <div class="col-sm-3">
     <div class="thumbnail">
-     <img alt="image" src="/assets/veg.jpeg" class="image-height">
+     <!-- <img alt="image" src="/assets/veg.jpeg" class="image-height"> -->
+     <%= image_tag(selling_product.images, :alt => "rss feed", :class =>"image-height" ) %>
      <div class="caption ">
        <div class="row">
          <div class="col-sm-5">
@@ -53,7 +54,8 @@
 <% @bidding_products.each do |bidding_product| %>
    <div class="col-sm-3">
     <div class="thumbnail">
-     <img alt="image" src="/assets/veg.jpeg" class="image-height">
+     <!-- <img alt="image" src="/assets/veg.jpeg" class="image-height"> -->
+     <%= image_tag(bidding_product.product.images, :alt => "rss feed", :class =>"image-height" ) %>
      <div class="caption ">
        <div class="row">
          <div class="col-sm-5">
