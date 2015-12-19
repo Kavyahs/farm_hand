@@ -16,6 +16,22 @@ ActiveRecord::Schema.define(version: 20151219115943) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "biddings", force: :cascade do |t|
+    t.float    "quantity"
+    t.float    "price"
+    t.string   "bidder_name"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "address"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "user_id"
+    t.integer  "state_id"
+    t.integer  "district_id"
+    t.string   "quantity_type"
+    t.string   "price_type"
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -27,6 +43,23 @@ ActiveRecord::Schema.define(version: 20151219115943) do
     t.integer  "state_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string   "images"
+    t.string   "category"
+    t.string   "sub_category"
+    t.string   "phone"
+    t.string   "address"
+    t.float    "price"
+    t.float    "quantity"
+    t.string   "state"
+    t.string   "district"
+    t.string   "close_date"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "seller_name"
+    t.string   "email"
   end
 
   create_table "states", force: :cascade do |t|
