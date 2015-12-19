@@ -39,3 +39,44 @@
 #flash {
   position:absolute;top:70px;width:100%
 }
+.bid-details.my-act {
+  text-align: left;
+}
+
+/*Home banner*/
+.banner {
+    background-image: url("/assets/images1.jpeg");
+    background-color: #cccccc;margin-top:60px;
+    color: #fff;height: 184px;
+}
+.banner .text {
+  position: absolute;top: 16%;left:40%;
+  font-size: 56px;
+}
+.module {
+  background-attachment: scroll, scroll;
+  background-clip: border-box, border-box;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/assets/images1.jpeg");
+  background-origin: padding-box, padding-box;
+  background-position: 0 0%, 0 0;
+  background-repeat: repeat, repeat;
+  background-size: cover;
+  float: left;
+  height: 200px;
+  margin: 10px 0 0 10px;
+  position: relative;
+ /* width: 300px;*/
+}
+.mid h2 {
+  color: white;
+  font-family: "Roboto",sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  left: 50%;
+  margin: 0;
+  position: absolute;
+  text-transform: uppercase;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
