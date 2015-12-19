@@ -1,5 +1,8 @@
 class HomeController < ApplicationController
-	def index
+  def index
     @user = User.new
-	end
+  end
+
+  def products
+  end
 end
