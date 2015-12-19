@@ -2,9 +2,9 @@ class BiddingsController < ActionController::Base
 
 
   def new
-    @product = Product.find(params[:product_id])
+    @bidding = Bidding.new
   end
-  
+
   def create
     @bidding = Bidding.new(bidding_params)
     @bidding.user_id = current_user.id

@@ -64,4 +64,5 @@ Rails.application.routes.draw do
   #   end
 
   resources :products, only: [:new, :index, :create]
+  resources :biddings, only: [:new, :index, :create]
 end
