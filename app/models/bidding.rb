@@ -11,10 +11,8 @@ class Bidding < ActiveRecord::Base
             :address,
             :presence => true
 
-  #Association
-  # belongs_to :user
-
-  # belongs_to :product
-  # has_one :state
-  # has_one :district
+  # Association
+  belongs_to :user
+  belongs_to :product
+  belongs_to :district
 end

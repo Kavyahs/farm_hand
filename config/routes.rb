@@ -31,7 +31,9 @@ Rails.application.routes.draw do
   #   end
 
   get 'static/index' => 'statics#index'
+  get 'static/seller' => 'statics#seller'
   get 'static/products' => 'statics#products'
+  get 'static/bidding' => 'statics#bidding'
 
   # Example resource route with sub-resources:
   #   resources :products do
@@ -60,4 +62,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  resources :products, only: [:new, :index, :create]
 end
