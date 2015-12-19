@@ -1,100 +1,100 @@
-  <div class="container content-area-height">
-    <div class="product-page-title">Bid Your Price</div>
-    <br><br>
-    <div class="row">
-      <div class="col-sm-5">
-        <form class="form-horizontal">
-          <div >
-            <%= image_tag(@product.images, :alt => "rss feed", :class => "bid-upload-img") %>
-          </div>
-          <div class="bid-details">Product Details</div>
-          <div class="form-group">
-            <label class="col-sm-4 control-label">Quantity</label>
-            <div class="col-sm-8">
-              <p class="form-control-static"><%= @product.quantity %><span> <%= @product.quantity_type %></span></p>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-4 control-label">Price</label>
-            <div class="col-sm-8">
-              <p class="form-control-static"><%= @product.price %> <span> <%= @product.price_type %></span></p>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-4 control-label">Name</label>
-            <div class="col-sm-8">
-              <p class="form-control-static"><%= @product.seller_name %></p>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-4 control-label">Phone</label>
-            <div class="col-sm-8">
-              <p class="form-control-static"><%= @product.phone %></p>
-            </div>
-          </div>
-       </form>
-     </div>
-     <div class="col-sm-2"></div>
-     <div class="col-sm-5">
-       <div class="bid-details">Bidding Details</div>
-        <%= form_for @bidding, :html => {:class => "form-horizontal" } do |f| %>
+<div class="container content-area-height">
+  <div class="product-page-title">Bid Your Price</div>
+  <br><br>
+  <div class="row">
+    <div class="col-sm-5">
+      <form class="form-horizontal">
+        <div >
+          <%= image_tag(@product.images, :alt => "rss feed", :class => "bid-upload-img") %>
+        </div>
+        <div class="bid-details">Product Details</div>
         <div class="form-group">
-          <label for="subCtaegory" class="col-sm-4 control-label">Name</label>
+          <label class="col-sm-4 control-label">Quantity</label>
           <div class="col-sm-8">
-            <%= f.text_field :bidder_name, :class => "form-control", :id => "Name", :placeholder => "Name" %>
+            <p class="form-control-static"><%= @product.quantity %><span> <%= @product.quantity_type %></span></p>
           </div>
         </div>
         <div class="form-group">
-          <label for="E-mail" class="col-sm-4 control-label">E-mail</label>
+          <label class="col-sm-4 control-label">Price</label>
           <div class="col-sm-8">
-            <%= f.text_field :email, :class => "form-control", :id => "E-mail", :placeholder => "Email" %>
+            <p class="form-control-static"><%= @product.price %> <span> <%= @product.price_type %></span></p>
           </div>
         </div>
         <div class="form-group">
-          <label for="phoneNumber" class="col-sm-4 control-label">Phone Number</label>
+          <label class="col-sm-4 control-label">Name</label>
           <div class="col-sm-8">
-            <%= f.text_field :phone, :class => "form-control", :id => "phoneNumber", :placeholder => "Phone" %>
+            <p class="form-control-static"><%= @product.seller_name %></p>
           </div>
         </div>
         <div class="form-group">
-          <label for="Price" class="col-sm-4 control-label">Price</label>
-          <div class="col-sm-5">
-            <%= f.text_field :price, :class => "form-control", :id => "Price", :placeholder => "Price" %>
+          <label class="col-sm-4 control-label">Phone</label>
+          <div class="col-sm-8">
+            <p class="form-control-static"><%= @product.phone %></p>
           </div>
-          <div class="col-sm-3">
-           <%= f.select :price_type, options_for_select(ConfigCenter::Measurement::Type), {}, { id: 'districts_select', :class => "form-control" } %>
-         </div>
-       </div>
-       <div class="form-group">
-        <label for="Quantity" class="col-sm-4 control-label">Quantity</label>
-        <div class="col-sm-5">
-          <%= f.text_field :quantity, :class => "form-control", :id => "Quantity", :placeholder => "Quantity" %>
         </div>
-        <div class="col-sm-3">
-         <%= f.select :quantity_type, options_for_select(ConfigCenter::Measurement::Type), {}, { id: 'districts_select', :class => "form-control" } %>
-       </div>
-     </div>
-     <div class="form-group">
-       <label for="Address" class="col-sm-4 control-label">Address</label>
-       <div class="col-sm-8">
-        <%= f.text_field :address, :class => "form-control", :id => "InputBidderaddress", :placeholder => "Address" %>
-       </div>
-      </div>
-      <div class="form-group">
-      <label for="Address" class="col-sm-4 control-label">District</label>
-      <div class="col-sm-8">
-         <%= f.select :district_id, options_for_select(@districts.collect { |district|
-          [district.name.titleize, district.id] }, 0), {}, { id: 'districts_select', :class => "form-control" } %>
-      </div>
-       </div>
-       <div class="form-group">
-       <label for="Address" class="col-sm-4 control-label">State</label>
-       <div class="col-sm-8">
-         <%= f.select :state_id, options_for_select(@states.collect { |state|
-          [state.name.titleize, state.id] }, 0), {}, { id: 'states_select', :class => "form-control" } %>
-       </div>
+      </form>
     </div>
-  <!-- </form> -->
+    <div class="col-sm-2"></div>
+    <div class="col-sm-5">
+     <div class="bid-details">Bidding Details</div>
+     <%= form_for @bidding, :html => {id: "bidding_form", :class => "form-horizontal" } do |f| %>
+     <div class="form-group">
+      <label for="subCtaegory" class="col-sm-4 control-label">Name</label>
+      <div class="col-sm-8">
+        <%= f.text_field :bidder_name, :class => "form-control", :id => "Name", :placeholder => "Name" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="E-mail" class="col-sm-4 control-label">E-mail</label>
+      <div class="col-sm-8">
+        <%= f.text_field :email, :class => "form-control", :id => "E-mail", :placeholder => "Email" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="phoneNumber" class="col-sm-4 control-label">Phone Number</label>
+      <div class="col-sm-8">
+        <%= f.text_field :phone, :class => "form-control", :id => "phoneNumber", :placeholder => "Phone" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="Price" class="col-sm-4 control-label">Price</label>
+      <div class="col-sm-5">
+        <%= f.text_field :price, :class => "form-control", :id => "Price", :placeholder => "Price" %>
+      </div>
+      <div class="col-sm-3">
+       <%= f.select :price_type, options_for_select(ConfigCenter::Measurement::Type), {}, { id: 'districts_select', :class => "form-control" } %>
+     </div>
+   </div>
+   <div class="form-group">
+    <label for="Quantity" class="col-sm-4 control-label">Quantity</label>
+    <div class="col-sm-5">
+      <%= f.text_field :quantity, :class => "form-control", :id => "Quantity", :placeholder => "Quantity" %>
+    </div>
+    <div class="col-sm-3">
+     <%= f.select :quantity_type, options_for_select(ConfigCenter::Measurement::Type), {}, { id: 'districts_select', :class => "form-control" } %>
+   </div>
+ </div>
+ <div class="form-group">
+   <label for="Address" class="col-sm-4 control-label">Address</label>
+   <div class="col-sm-8">
+    <%= f.text_field :address, :class => "form-control", :id => "InputBidderaddress", :placeholder => "Address" %>
+  </div>
+</div>
+<div class="form-group">
+  <label for="Address" class="col-sm-4 control-label">District</label>
+  <div class="col-sm-8">
+   <%= f.select :district_id, options_for_select(@districts.collect { |district|
+    [district.name.titleize, district.id] }, 0), {}, { id: 'districts_select', :class => "form-control" } %>
+  </div>
+</div>
+<div class="form-group">
+ <label for="Address" class="col-sm-4 control-label">State</label>
+ <div class="col-sm-8">
+   <%= f.select :state_id, options_for_select(@states.collect { |state|
+    [state.name.titleize, state.id] }, 0), {}, { id: 'states_select', :class => "form-control" } %>
+  </div>
+</div>
+<!-- </form> -->
 </div>
 </div>
 <div class="text-right">
@@ -108,4 +108,5 @@
   $(function() {
     $("#datepicker").datepicker();
   });
+  bidding_form();
 </script>

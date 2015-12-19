@@ -7,7 +7,7 @@ function product_form() {
       "product[close_date]":{
         required: true
       },
-      "product[category_id]":{
+      "product[sub_category_id]":{
         required: true
       },
       "product[quantity]":{
@@ -34,6 +34,12 @@ function product_form() {
       "product[state_id]":{
         required: true
       },
+      "product[price_type]":{
+        required: true
+      },
+      "product[quantity_type]":{
+        required: true
+      },
       "product[other_details]":{
         required: true
       }
@@ -48,16 +54,16 @@ function product_form() {
       "product[close_date]": {
         required : "This field is required"
       },
-      "product[category_id]": {
+      "product[sub_category_id]": {
         required : "This field is required"
       },
-      "product[quantity]]": {
+      "product[quantity]": {
         required : "This field is required"
       },
       "product[seller_name]": {
         required : "This field is required"
       },
-      "product[email]]": {
+      "product[email]": {
         required : "This field is required"
       },
       "product[phone]": {
@@ -73,6 +79,12 @@ function product_form() {
         required : "This field is required"
       },
       "product[state_id]": {
+        required : "This field is required"
+      },
+      "product[price_type]": {
+        required : "This field is required"
+      },
+      "product[quantity_type]": {
         required : "This field is required"
       },
       "product[other_details]": {
