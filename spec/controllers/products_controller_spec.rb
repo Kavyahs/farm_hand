@@ -2,21 +2,28 @@ require 'rails_helper'
 
 describe ProductsController do
 
-  context 'index' do
+  let!(:user) {FactoryGirl.create(:user)}
+
+  context 'GET index' do
     it 'list all products' do
       get :index
       response.should be_success
     end
   end
 
-  context 'new' do
+  context 'GET new' do
     it 'create a new object of product' do
       get :new
       response.should be_success
     end
   end
 
-  context 'create' do
+  context 'POST create' do
+
+    before(:each) do
+      session[:user_id] = user.id
+    end
+
     let(:valid_params) do
       { product: {
           :seller_name => 'prakash',
@@ -39,8 +46,10 @@ describe ProductsController do
     end
 
     it 'create a product with valid params' do
-      expect { post :create, valid_params }
+      user
+      expect { post :create, valid_params}
             .to change { Product.count }.from(0).to(1)
+      expect(response).to redirect_to(root_path)
     end
   end
 end

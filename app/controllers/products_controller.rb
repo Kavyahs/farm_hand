@@ -11,7 +11,11 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(products_params)
     @product.user_id = current_user.id
-    @product.save
+    if @product.save
+      redirect_to root_path
+    else
+      render 'new'
+    end
   end
 
   private
