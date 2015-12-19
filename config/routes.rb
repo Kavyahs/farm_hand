@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   #   end
 
   get 'static/index' => 'statics#index'
+  get 'static/products' => 'statics#products'
 
   # Example resource route with sub-resources:
   #   resources :products do
