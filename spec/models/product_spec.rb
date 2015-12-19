@@ -19,6 +19,9 @@ describe Product do
   }
 
   context 'positive case' do
+    it 'create product with all valid params' do
+
+    end
   end
 
 
