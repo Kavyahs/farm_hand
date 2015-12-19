@@ -4,8 +4,8 @@ development:
   reconnect: false
   database: farm_hand_development
   pool: 5
-  username: hemashree
-  password: 
+  username: Akshay
+  password: password
   host: localhost
   port: 5432
 
@@ -14,9 +14,9 @@ test:
   encoding: unicode
   reconnect: false
   database: farm_hand_test
-  pool: 5
-  username: hemashree
-  password: 
+  pool: 30
+  username: Akshay
+  password: password
   host: localhost
   port: 5432
 
