@@ -9,3 +9,17 @@
 .thumbnail .caption.home-category {
   height: 100px;border-top: 1px solid #ddd;
 }
+.thumbnail .caption.home-category .category-name {
+  font-size: 22px;
+}
+.disp-inline {
+  display: inline-table;width: 200px;
+}
+/*product page*/
+.product-page-title {
+  font-size: 36px;color: #22cd76;
+}
+.product-overflow {
+ overflow-y: scroll;
+ height:650px;overflow-x: hidden;margin-bottom: 20px;
+}
