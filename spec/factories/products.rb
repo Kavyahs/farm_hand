@@ -1,8 +1,9 @@
+IMAGE_1 ||= File.open(Rails.root.join('spec/fixtures/imgo.jpeg'))
 FactoryGirl.define do
   factory :product do
     seller_name 'prakash'
     email 'prakash@yopmail.com'
-    images 'image'
+    images IMAGE_1
     category_id 1
     sub_category_id 3
     phone '8495844435'

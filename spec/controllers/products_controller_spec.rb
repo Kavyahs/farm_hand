@@ -3,17 +3,18 @@ require 'rails_helper'
 describe ProductsController do
 
   let!(:user) {FactoryGirl.create(:user)}
+  let!(:category) {FactoryGirl.create(:category)}
 
   context 'GET index' do
     it 'list all products' do
-      get :index
+      get :index, :category_id => category.id
       response.should be_success
     end
   end
 
   context 'GET new' do
     it 'create a new object of product' do
-      get :new
+      get :new, :category_id => category.id
       response.should be_success
     end
   end
@@ -22,13 +23,14 @@ describe ProductsController do
 
     before(:each) do
       session[:user_id] = user.id
+      session[:category_id] = category.id
     end
 
     let(:valid_params) do
       { product: {
           :seller_name => 'prakash',
           :email => 'prakash@yopmail.com',
-          :images => 'images',
+          :images => File.open(Rails.root.join('spec/fixtures/imgo.jpeg')),
           :category_id => 1,
           :sub_category_id => 2,
           :phone => '8495844435',

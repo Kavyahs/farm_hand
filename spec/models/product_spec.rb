@@ -17,7 +17,7 @@ describe Product do
 
   context 'negative case' do
     it 'should not create product when image is null' do
-      product.images = nil
+      product.images = File.open(Rails.root.join(''))
       expect(product).to be_invalid
     end
 
