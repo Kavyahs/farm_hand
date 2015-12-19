@@ -59,6 +59,7 @@ namespace 'import' do
       next if row[:name].blank?
       category = Category.new
       category.name = row[:name]
+      category.image_name = row[:image_name]
       if category.valid?
         category.save
         puts "#{category.name} is created"
