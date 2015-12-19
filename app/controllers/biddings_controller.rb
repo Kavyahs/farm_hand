@@ -20,6 +20,6 @@ class BiddingsController < ApplicationController
   private
 
   def bidding_params
-    params.require(:bidding).permit(:bidder_name, :price, :price_type, :quantity, :quantity_type, :phone, :email, :address, :district, :state, :product_id)
+    params.require(:bidding).permit(:bidder_name, :price, :price_type, :quantity, :quantity_type, :phone, :email, :address, :district_id, :state_id, :product_id)
   end
 end

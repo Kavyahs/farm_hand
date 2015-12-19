@@ -62,7 +62,7 @@
             <%= f.text_field :price, :class => "form-control", :id => "Price", :placeholder => "Price" %>
           </div>
           <div class="col-sm-3">
-           <%= f.select :quantity_type, options_for_select(ConfigCenter::Measurement::Type), {}, { id: 'districts_select', :class => "form-control" } %> 
+           <%= f.select :price_type, options_for_select(ConfigCenter::Measurement::Type), {}, { id: 'districts_select', :class => "form-control" } %> 
          </div>
        </div>
        <div class="form-group">
@@ -94,13 +94,13 @@
           [state.name.titleize, state.id] }, 0), {}, { id: 'states_select', :class => "form-control" } %>
        </div>
     </div>
-  <% end %>
   <!-- </form> -->
 </div>
 </div>
 <div class="text-right">
-  <button class="btn btn-lg btn-primary" type="button">Submit</button>
+  <%= f.submit "Submit", :class => "btn btn-lg btn-primary" %>
 </div>
+<% end %>
 
 </div>
 <script>
