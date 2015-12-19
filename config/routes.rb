@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
   resources :password_resets
+  resources :products, only: [:new, :create]
+
+  get 'products/:category_id/index' => 'products#index', as: :product_all
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -62,7 +66,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-  resources :products, only: [:new, :index, :create]
-  resources :biddings, only: [:new, :index, :create]
 end
