@@ -5,7 +5,7 @@ var genericModalId = "Modal";
 //   keyboard: true,
 //   backdrop: "static"
 // });
-// 
+//
 // $('#'+genericModalId).modal({
 //   keyboard: true,
 //   backdrop: "static"
