@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   end
 
   def new
-    if ! current_user
+    if current_user.blank?
       flash[:error] = "Please Sign In/Sign Up to Sell Your Product"
       redirect_to root_path
     else
@@ -17,6 +17,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(products_params)
     @product.user_id = current_user.id
+    @product.category_id = params['product']['category_id']
     if @product.save
       redirect_to root_path
     else

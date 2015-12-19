@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   get 'products/:category_id/new' => 'products#new', as: :new_product
   post 'products' => 'products#create', as: :products
 
+  get 'bidding/:product_id/new' => 'biddings#new', as: :new_bidding
   # get 'bidding/:product_id/new' => 'biddings#new', as: :new_bidding
-  get 'bidding/new' => 'biddings#new', as: :new_bidding
   post 'bidding/create' => 'biddings#create', as: :biddings
 
 
