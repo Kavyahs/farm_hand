@@ -11,6 +11,7 @@
 </head>
 <body>
   <%= render :partial => "/layouts/header"%>
+  <%= render '/layouts/flash_message' %>
   <%= yield %>
   <%= render :partial => "/layouts/footer" %>
   <%= render :partial => 'overlays/modal' %>

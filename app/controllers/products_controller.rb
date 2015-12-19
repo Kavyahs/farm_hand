@@ -5,7 +5,13 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
+    if ! current_user
+      flash[:error] = "Please Sign In/Sign Up to Sell Your Product"
+      redirect_to root_path
+    else
+      @sub_categories = SubCategory.where(:category_id => params[:category_id])
+      @product = Product.new
+    end
   end
 
   def create
