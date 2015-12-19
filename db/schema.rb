@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20151219090729) do
 
   create_table "districts", force: :cascade do |t|
     t.string   "name"
-    t.integer  "states_id"
+    t.integer  "state_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
