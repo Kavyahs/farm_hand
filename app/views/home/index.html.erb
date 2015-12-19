@@ -6,7 +6,7 @@
       <div class="thumbnail">
        <img class="image-height" src="/assets/<%= category.image_name %>" alt="image">
        <div class="caption home-category">
-         <h3><%= category.name %></h3>
+         <h3><%= link_to category.name, product_all_path(category.id) %></h3>
        </div>
      </div>
    </div>

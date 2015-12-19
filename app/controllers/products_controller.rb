@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.all
+    @products = Product.where('category_id = ?', params[:category_id])
   end
 
   def new
