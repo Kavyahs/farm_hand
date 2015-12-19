@@ -4,7 +4,7 @@
         <div class="product-page-title">Products List</div>
       </div>
       <div class="col-sm-3 text-right">
-       <button class="btn btn-primary" type="button">Click Here to Sell Your Product</button>
+      <%= link_to "Click Here to Sell Your Product", new_product_path(:category_id => params[:category_id]), :class=>"btn btn-primary" %>
      </div>
      <div class="col-sm-6">
       <ul class="text-right">

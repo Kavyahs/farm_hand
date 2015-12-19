@@ -2,9 +2,11 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
   resources :password_resets
-  resources :products, only: [:new, :create]
+  # resources :products, only: [:new, :create]
 
   get 'products/:category_id/index' => 'products#index', as: :product_all
+  get 'products/:category_id/new' => 'products#new', as: :new_product
+  post 'products' => 'products#create', as: :products
 
 
   # The priority is based upon order of creation: first created -> highest priority.

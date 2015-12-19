@@ -16,3 +16,5 @@
 //= require bootstrap
 //= require turbolinks
 //= require utilities
+//= require actions
+//= require_tree .

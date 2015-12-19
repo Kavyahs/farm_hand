@@ -36,6 +36,9 @@
   width: 200px;height: 200px;border: 1px solid #ddd;
   margin-bottom: 20px;
 }
+#flash {
+  position:absolute;top:70px;width:100%
+}
 .bid-details.my-act {
   text-align: left;
 }

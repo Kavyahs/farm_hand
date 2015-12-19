@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
-	def index
+  def index
     @user = User.new
     @categories = Category.all
-	end
+  end
 end

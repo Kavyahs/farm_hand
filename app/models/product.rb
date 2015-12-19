@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+  mount_uploader :images
 
   validates :images, presence: true
   validates :sub_category_id, presence: true
