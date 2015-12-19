@@ -2,10 +2,10 @@ development:
   adapter: postgresql
   encoding: unicode
   reconnect: false
-  database: farm_hand_dev
+  database: farm_hand_development
   pool: 5
-  username: postgres
-  password: password
+  username: hemashree
+  password: 
   host: localhost
   port: 5432
 
@@ -14,9 +14,9 @@ test:
   encoding: unicode
   reconnect: false
   database: farm_hand_test
-  pool: 30
-  username: postgres
-  password: password
+  pool: 5
+  username: hemashree
+  password: 
   host: localhost
   port: 5432
 
