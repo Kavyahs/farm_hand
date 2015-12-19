@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   get 'static/products' => 'statics#products'
   get 'static/bidding' => 'statics#bidding'
   get 'static/my_activity' => 'statics#my_activity'
+  get 'static/my_profile' => 'statics#my_profile'
 
   # Example resource route with sub-resources:
   #   resources :products do
