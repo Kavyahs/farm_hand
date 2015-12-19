@@ -2,7 +2,7 @@ development:
   adapter: postgresql
   encoding: unicode
   reconnect: false
-  database: farm_hand_development
+  database: farm_hand_dev
   pool: 5
   username: postgres
   password: password
