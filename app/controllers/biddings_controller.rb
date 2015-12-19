@@ -1,15 +1,18 @@
 class BiddingsController < ApplicationController
+  before_action :authenticate_user, :only => [:new, :create]
 
 
   def new
     @bidding = Bidding.new
     @districts = District.all
     @states = State.all
+    @product = Product.find(params["product_id"])
   end
 
   def create
     @bidding = Bidding.new(bidding_params)
     @bidding.user_id = current_user.id
+    @bidding.product_id = params['bidding']['product_id']
     if @bidding.save
       redirect_to root_path
     else

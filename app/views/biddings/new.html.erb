@@ -5,31 +5,31 @@
       <div class="col-sm-5">
         <form class="form-horizontal">
           <div >
-            <img src="/assets/veg.jpeg" class="bid-upload-img">
+            <%= image_tag(@product.images, :alt => "rss feed", :class => "bid-upload-img") %>
           </div>
           <div class="bid-details">Product Details</div>
           <div class="form-group">
             <label class="col-sm-4 control-label">Quantity</label>
             <div class="col-sm-8">
-              <p class="form-control-static">50 <span> Kilogram</span></p>
+              <p class="form-control-static"><%= @product.quantity %><span> <%= @product.quantity_type %></span></p>
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-4 control-label">Price</label>
             <div class="col-sm-8">
-              <p class="form-control-static">50 <span> Kilogram</span></p>
+              <p class="form-control-static"><%= @product.price %> <span> <%= @product.price_type %></span></p>
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-4 control-label">Name</label>
             <div class="col-sm-8">
-              <p class="form-control-static">Seller Name <span> Kilogram</span></p>
+              <p class="form-control-static"><%= @product.seller_name %></p>
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-4 control-label">Phone</label>
             <div class="col-sm-8">
-              <p class="form-control-static">9234567891 <span> Kilogram</span></p>
+              <p class="form-control-static"><%= @product.phone %></p>
             </div>
           </div>
        </form>
@@ -62,7 +62,7 @@
             <%= f.text_field :price, :class => "form-control", :id => "Price", :placeholder => "Price" %>
           </div>
           <div class="col-sm-3">
-           <%= f.select :price_type, options_for_select(ConfigCenter::Measurement::Type), {}, { id: 'districts_select', :class => "form-control" } %> 
+           <%= f.select :price_type, options_for_select(ConfigCenter::Measurement::Type), {}, { id: 'districts_select', :class => "form-control" } %>
          </div>
        </div>
        <div class="form-group">
@@ -71,7 +71,7 @@
           <%= f.text_field :quantity, :class => "form-control", :id => "Quantity", :placeholder => "Quantity" %>
         </div>
         <div class="col-sm-3">
-         <%= f.select :quantity_type, options_for_select(ConfigCenter::Measurement::Type), {}, { id: 'districts_select', :class => "form-control" } %> 
+         <%= f.select :quantity_type, options_for_select(ConfigCenter::Measurement::Type), {}, { id: 'districts_select', :class => "form-control" } %>
        </div>
      </div>
      <div class="form-group">
@@ -84,7 +84,7 @@
       <label for="Address" class="col-sm-4 control-label">District</label>
       <div class="col-sm-8">
          <%= f.select :district_id, options_for_select(@districts.collect { |district|
-          [district.name.titleize, district.id] }, 0), {}, { id: 'districts_select', :class => "form-control" } %>       
+          [district.name.titleize, district.id] }, 0), {}, { id: 'districts_select', :class => "form-control" } %>
       </div>
        </div>
        <div class="form-group">
@@ -98,6 +98,7 @@
 </div>
 </div>
 <div class="text-right">
+  <%= f.hidden_field :product_id, type: "hidden", value: params['product_id'] %>
   <%= f.submit "Submit", :class => "btn btn-lg btn-primary" %>
 </div>
 <% end %>

@@ -1,11 +1,12 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user, :only => [:new, :create]
 
   def index
     @products = Product.where('category_id = ?', params[:category_id])
   end
 
   def new
-    if ! current_user
+    if current_user.blank?
       flash[:error] = "Please Sign In/Sign Up to Sell Your Product"
       redirect_to root_path
     else
@@ -16,9 +17,8 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(products_params)
-    category = SubCategory.find_by_id(products_params[:sub_category_id]).category
     @product.user_id = current_user.id
-    @product.category_id = category.id
+    @product.category_id = params['product']['category_id']
     if @product.save
       redirect_to root_path
     else

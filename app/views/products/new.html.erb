@@ -29,11 +29,7 @@
           <%= f.text_field :quantity, :class=>"form-control",:id=>"Quantity", :placeholder=>"Quantity"%>
         </div>
         <div class="col-sm-3">
-         <select class="form-control">
-           <option>Kilogram</option>
-           <option>Quintal</option>
-           <option>Tonne</option>
-         </select>
+        <%= f.select :quantity_type, options_for_select(ConfigCenter::Measurement::Type), {}, { id: 'districts_select', :class => "form-control" } %>
        </div>
      </div>
    </div>
@@ -63,18 +59,14 @@
         <%= f.text_field :price, :class=>"form-control",:id=>"Price", :placeholder=>"Price"%>
       </div>
       <div class="col-sm-3">
-       <select class="form-control">
-         <option>Kilogram</option>
-         <option>Quintal</option>
-         <option>Tonne</option>
-       </select>
+       <%= f.select :price_type, options_for_select(ConfigCenter::Measurement::Type), {}, { id: 'districts_select', :class => "form-control" } %>
      </div>
    </div>
    <div class="form-group">
     <label for="Address" class="col-sm-4 control-label">Address</label>
     <div class="col-sm-8">
       <!-- <textarea class="form-control" rows="3"></textarea> -->
-      <%= f.text_field :address, :class=>"form-control",:placeholder=>"Other Details"%>
+      <%= f.text_field :address, :class=>"form-control",:placeholder=>"Address"%>
     </div>
   </div>
   <div class="form-group">
@@ -100,6 +92,7 @@
 </div>
 </div>
 <div class="text-right">
+  <%= f.hidden_field :category_id, type: "hidden", value: params['category_id'] %>
   <%= f.submit "Submit", :class=>"btn btn-lg btn-primary" %>
 </div>
 <% end %>

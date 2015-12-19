@@ -1,0 +1,16 @@
+<table style="width:100%">
+  <tr>
+    <th>Name</td>
+    <th>Price</th> 
+    <th>qty</th>
+    <th>phone</th>
+  </tr>
+  <% @biddings.each do |bidding| %>
+  <tr>
+    <td><%= bidding.bidder_name %></td>
+    <td><%= bidding.price %>/<%= bidding.price_type %></td> 
+    <td><%= bidding.quantity %> <%= bidding.quantity_type %> </td>
+    <td><%= bidding.phone %></td>
+  </tr>
+  <% end %>
+</table>
