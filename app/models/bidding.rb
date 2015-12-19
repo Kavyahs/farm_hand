@@ -3,17 +3,18 @@ class Bidding < ActiveRecord::Base
   #validations
   validates :bidder_name,
             :price,
+            :price_type,
             :quantity,
+            :quantity_type,
             :phone,
             :email,
             :address,
-            :district,
-            :state,
             :presence => true
 
   #Association
-  belongs_to :user
+  # belongs_to :user
 
-  has_one :product
-
+  # belongs_to :product
+  # has_one :state
+  # has_one :district
 end
