@@ -27,3 +27,12 @@
 .sell-upload-img {
   width: 200px;height: 200px;border: 1px solid #ddd;
 }
+/*Bidding details page*/
+.bid-details {
+  font-size: 22px;color: #22cd76;margin-bottom: 20px;
+  text-align: center;
+}
+.bid-upload-img {
+  width: 200px;height: 200px;border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
