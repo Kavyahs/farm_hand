@@ -8,12 +8,13 @@
   <meta charset="utf-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width,initial-scale=1" name="viewport">
-  <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.css">
 </head>
 <body>
   <%= render :partial => "/layouts/header"%>
   <%= yield %>
   <%= render :partial => "/layouts/footer" %>
+  <%= render :partial => 'overlays/modal' %>
+  <%#= render :partial => 'overlays/sign_up' %>
 
 </body>
 </html>

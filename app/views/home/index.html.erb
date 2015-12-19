@@ -1,15 +1,17 @@
 <div class="container content-area-height">
   <div class="home-heading text-center"><span>FARM</span> - HAND</div>
   <div class="row">
+    <% @categories.each do |category|%>
     <div class="col-sm-3">
       <div class="thumbnail">
-       <img class="image-height" src="/assets/veg.jpeg" alt="image">
+       <img class="image-height" src="/assets/<%= category.image_name %>" alt="image">
        <div class="caption home-category">
-         <h3>Cereals(ಧಾನ್ಯಗಳು)</h3>
+         <h3><%= link_to category.name, product_all_path(category.id) %></h3>
        </div>
      </div>
    </div>
-   <div class="col-sm-3">
+   <% end%>
+<!--    <div class="col-sm-3">
      <div class="thumbnail">
        <img class="image-height" src="/assets/veg.jpeg" alt="image">
        <div class="caption home-category">
@@ -100,11 +102,12 @@
     <h3>Others(ಇತರೆ)</h3>
   </div>
 </div>
+</div> -->
 </div>
 </div>
 
 <!--Sign Up Modal -->
-<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<!-- <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -137,9 +140,9 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <!--Log in Modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<!-- <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -169,5 +172,5 @@
       </div>
     </div>
   </div>
-</div>
-</div>
+</div> -->
+<!-- </div> -->

@@ -3,7 +3,7 @@
   font-size: 36px;font-weight: 600;color: #22CD76;
   margin: 20px 0px;
 }
-.thumbnail img .image-height {
+.thumbnail img.image-height {
   height: 175px;
 }
 .thumbnail .caption.home-category {

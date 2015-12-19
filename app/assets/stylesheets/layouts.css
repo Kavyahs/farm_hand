@@ -3,8 +3,8 @@
   border-radius: 0px;color: #fff;
 }
 .navbar-default {
-  background-color: #4D4D4D;
-  border-color: #4D4D4D;
+  background-color: #4D4D4D !important;
+  border-color: #4D4D4D !important;
 }
 .navbar-default .navbar-nav > li > a {
   color: #fff;
