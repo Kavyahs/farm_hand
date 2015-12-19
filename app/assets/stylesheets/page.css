@@ -53,6 +53,12 @@
   position: absolute;top: 16%;left:40%;
   font-size: 56px;
 }
+
+.banner .small-text {
+  position: absolute;top: 30%;left:36%;
+  font-size: 26px;
+  color:  #5c2500;
+}
 .module {
   background-attachment: scroll, scroll;
   background-clip: border-box, border-box;
