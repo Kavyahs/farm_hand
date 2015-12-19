@@ -16,7 +16,9 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(products_params)
+    category = SubCategory.find_by_id(products_params[:sub_category_id]).category
     @product.user_id = current_user.id
+    @product.category_id = category.id
     if @product.save
       redirect_to root_path
     else

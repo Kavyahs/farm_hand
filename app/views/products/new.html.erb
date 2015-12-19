@@ -1,4 +1,4 @@
-<%= form_for @product, html: {:class => "form-horizontal", :multiple => true} do |f| %>
+<%= form_for @product, html: {:class => "form-horizontal", id: "product_form", :multiple => true} do |f| %>
 <div class="container content-area-height">
   <div class="product-page-title">Selling Details</div>
   <br><br>
@@ -20,7 +20,7 @@
       <div class="form-group">
         <label for="subCtaegory" class="col-sm-4 control-label">Sub Category</label>
         <div class="col-sm-8">
-          <%= f.select :category_id, @sub_categories.collect {|p| [ p.name, p.id ] }, {:prompt => "Select"}, { :class => "form-control" }  %>
+          <%= f.select :sub_category_id, @sub_categories.collect {|p| [ p.name, p.id ] }, {:prompt => "Select"}, { :class => "form-control" }  %>
         </div>
       </div>
       <div class="form-group">
@@ -121,4 +121,5 @@ jQuery(function($){
       reader.readAsDataURL(this.files[0]);
     }
   }); }, 400);
+  product_form();
 </script>
