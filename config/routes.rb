@@ -6,6 +6,11 @@ Rails.application.routes.draw do
 
   get 'products/:category_id/index' => 'products#index', as: :product_all
 
+  # get 'bidding/:product_id/new' => 'biddings#new', as: :new_bidding
+  get 'bidding/new' => 'biddings#new', as: :new_bidding
+  post 'bidding/create' => 'biddings#create', as: :biddings
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

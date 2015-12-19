@@ -3,6 +3,8 @@ class BiddingsController < ApplicationController
 
   def new
     @bidding = Bidding.new
+    @districts = District.all
+    @states = State.all
   end
 
   def create
