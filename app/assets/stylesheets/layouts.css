@@ -49,7 +49,7 @@ a:hover {
 
 /*Footer*/
 .footer {
-  background-color: #73726E;
+  background-color: #73726E;margin-top: 20px;
 }
 .footer .container {
   background-color: #73726E;color: #fff; padding: 20px 10px 10px;

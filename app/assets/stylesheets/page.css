@@ -23,3 +23,7 @@
  overflow-y: scroll;
  height:650px;overflow-x: hidden;margin-bottom: 20px;
 }
+/*Seller page*/
+.sell-upload-img {
+  width: 200px;height: 200px;border: 1px solid #ddd;
+}
